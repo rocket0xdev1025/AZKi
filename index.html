@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AZKi</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <style>
+      body {
+        position: relative;
+        background-color: #000;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        z-index: 100;
+        inset: 0;
+        background-color: #000;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease 0.3s, visibility 0.3s ease 0.3s;
+      }
+
+      .loaded body::before {
+        opacity: 0;
+        visibility: hidden;
+      }
+    </style>
+    <link rel="stylesheet" href="css/style.min.css?_v=20240929215658" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <audio id="sound" loop src="img/mp3/01.mp3"></audio>
+      <!-- <div class="sound-box">
+
+        <button id="play">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none">
+            <g clip-path="url(#clip0_594_25)">
+              <path
+                d="M5.6 16.7904L6.0112 16.104L5.8208 15.992H5.6V16.7904ZM5.6 7.19682V7.99682H5.8208L6.0128 7.88322L5.6 7.19682ZM13.6 2.40002H14.4C14.4 2.25848 14.3625 2.11946 14.2913 1.99715C14.22 1.87485 14.1176 1.77364 13.9944 1.70385C13.8713 1.63406 13.7318 1.5982 13.5903 1.59991C13.4488 1.60163 13.3102 1.64087 13.1888 1.71362L13.6 2.40002ZM13.6 21.5872L13.1888 22.2736C13.3102 22.3464 13.4488 22.3856 13.5903 22.3873C13.7318 22.389 13.8713 22.3532 13.9944 22.2834C14.1176 22.2136 14.22 22.1124 14.2913 21.9901C14.3625 21.8678 14.4 21.7288 14.4 21.5872H13.6ZM5.6 15.992L2.4 15.9904V17.5904H5.6V15.992ZM2.4 15.9904C2.18783 15.9904 1.98434 15.9061 1.83431 15.7561C1.68429 15.6061 1.6 15.4026 1.6 15.1904H0C0 16.5184 1.0752 17.5904 2.4 17.5904V15.9904ZM1.6 15.1904V8.79682H0V15.1936L1.6 15.1904ZM1.6 8.79682C1.60042 8.58493 1.6849 8.38025 1.83488 8.23057C1.98486 8.08089 2.1881 7.99682 2.4 7.99682V6.39682C1.76348 6.39682 1.15303 6.64968 0.702944 7.09977C0.252856 7.54985 0 8.1603 0 8.79682H1.6ZM2.4 7.99682H5.6V6.39682H2.4V7.99682ZM6.0128 7.88322L14.0112 3.08642L13.1888 1.71362L5.1888 6.51042L6.0128 7.88322ZM12.8 2.40002V21.5872H14.4V2.40002H12.8ZM14.0112 20.9008L6.0112 16.104L5.1888 17.4768L13.1888 22.2736L14.0112 20.9008ZM16 9.60002V14.4H17.6V9.60002H16ZM19.2 6.40002V17.6H20.8V6.40002H19.2ZM22.4 3.20002V20.8H24V3.20002H22.4Z"
+                fill="white" />
+            </g>
+            <defs>
+              <clipPath id="clip0_594_25">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+        
+      </div> -->
+      <div class="menu-open-bg"></div>
+      <header class="header">
+        <div class="header__container">
+          <div class="header__body">
+            <a href="../" class="header__logo"
+              ><img src="img/logo.png" alt="Logo"
+            /></a>
+            <div class="header__menu menu">
+              <button type="button" class="menu__icon icon-menu">
+                <span></span>
+              </button>
+              <nav class="menu__body">
+                <ul class="menu__list">
+                  <li class="menu__item">
+                    <a href="#" data-goto=".hero" class="menu__link">Home</a>
+                  </li>
+                  <li class="menu__item">
+                    <a href="#" data-goto=".join" class="menu__link"
+                      >PLATFORMS</a
+                    >
+                  </li>
+                  <li class="menu__item">
+                    <a href="#" data-goto=".main-roadmap" class="menu__link"
+                      >Roadmap</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <a
+              href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA"
+              target="_blank"
+              class="header__button"
+              data-da=".menu__body, 767.98"
+              >BUY NOW</a
+            >
+          </div>
+          <button id="play-pause" class="header__play">
+            <img src="img/mp3/play.svg" alt="Play" />
+            <img src="img/mp3/pause.svg" alt="Play" />
+          </button>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="page__hero hero">
+          <div class="hero__container">
+            <h1 class="hero__title">
+              <img src="img/heroTitle.png" alt="AZKi FESTIVALS WE LOVE" />
+            </h1>
+            <div class="hero__body">
+              <a
+                target="_blank"
+                href="https://x.com/AZKi_sol"
+                class="hero__social-item"
+              >
+                <img src="img/xHero.png" alt="X LOGO" />
+              </a>
+              <a
+                target="_blank"
+                href="https://t.me/AZKi_sol"
+                class="hero__social-item"
+              >
+                <img src="img/telHero.png" alt="TELEGMAM LOGO" />
+              </a>
+              <a
+                target="_blank"
+                href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA"
+                class="hero__button"
+              >
+                <img src="img/buyHero.png" alt="BUY NOW" />
+              </a>
+              <img src="img/hero.png" alt="Image" />
+            </div>
+          </div>
+          <div class="hero__line line line--hero">
+            <div class="line__row">
+              <span>AZKi</span>
+              <span>AZKi</span>
+              <span>AZKi</span>
+              <span>AZKi</span>
+
+              <span>AZKi</span>
+              <span>AZKi</span>
+
+              <span>AZKi</span>
+
+              <span>AZKi</span>
+
+            </div>
+            <div class="line__row">
+              <span>AZKi</span>
+
+              <span>AZKi</span>
+
+              <span>AZKi</span>
+
+              <span>AZKi</span>
+
+              <span>AZKi</span>
+
+              <span>AZKi</span>
+
+              <span>AZKi</span>
+
+              <span>AZKi</span>
+
+            </div>
+          </div>
+        </section>
+        <section class="page__roadmap roadmap">
+          <div class="roadmap__party party-roadmap">
+            <div class="party-roadmap__container">
+              <div class="party-roadmap__body">
+                <div class="party-roadmap__light1">
+                  <img loading="lazy" src="img/light1.png" alt="Light" />
+                </div>
+                <div class="party-roadmap__light2">
+                  <img loading="lazy" src="img/light2.png" alt="Light" />
+                </div>
+                <div class="party-roadmap__dance">
+                  <img loading="lazy" src="img/dance.png" alt="Image" />
+                  <img loading="lazy" src="img/p1.png" alt="Image" />
+                  <img loading="lazy" src="img/p2.png" alt="Image" />
+                  <img loading="lazy" src="img/p3.png" alt="Image" />
+                  <img loading="lazy" src="img/p4.png" alt="Image" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="roadmap__main main-roadmap">
+            <div class="main-roadmap__top">
+              <div class="main-roadmap__container">
+                <div class="main-roadmap__top-body">
+                  <div class="main-roadmap__top-image">
+                    <img src="img/roadmap.png" alt="ROADMAP" />
+                  </div>
+                  <div
+                    class="main-roadmap__top-info"
+                    data-watch-threshold="0.75"
+                    data-watch-once
+                    data-watch
+                  >
+                    <h3 data-watch-threshold="0.75" data-watch-once data-watch>
+                      Virtual Diva AZKi
+                    </h3>
+                    <p data-watch-threshold="0.75" data-watch-once data-watch>
+                      A diva reborn into a virtual realm sets out to reshape reality itself. With unmatched talent, she bends the rules of time, space, and status to her will. No boundary can hold her as she glides effortlessly through every obstacle. Her brilliance becomes the force that forges an entirely new world.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main-roadmap__bottom">
+              <div class="main-roadmap__container">
+                <div
+                  class="main-roadmap__bottom-items"
+                  data-watch-threshold="0.6"
+                  data-watch-once
+                  data-watch
+                >
+                  <div
+                    class="main-roadmap__bottom-item"
+                    data-watch-threshold="0.65"
+                    data-watch-once
+                    data-watch
+                  >
+                    <h4>April 2026</h4>
+                    <ul>
+                      <li>Define AZKi meme persona</li>
+                      <li>Create content pillars </li>
+                      <li>Build asset library</li>
+                    </ul>
+                  </div>
+                  <div
+                    class="main-roadmap__bottom-item"
+                    data-watch-threshold="0.65"
+                    data-watch-once
+                    data-watch
+                  >
+                    <h4>May 2026</h4>
+                    <ul>
+                      <li>Entry: Viral posts → Profile clicks → Discord joins.</li>
+                      <li>Set up Discord structure</li>
+                      <li>Daily content loop</li>
+                    </ul>
+                  </div>
+                  <div
+                    class="main-roadmap__bottom-item"
+                    data-watch-threshold="0.65"
+                    data-watch-once
+                    data-watch
+                  >
+                    <h4>June 2026</h4>
+                    <ul>
+                      <li>Create → Post → Track → Remix → Repeat.</li>
+                      <li>Launch weekly meme contests.</li>
+                      <li>Use analytics to double down on top-performing formats.</li>
+                    </ul>
+                  </div>
+                  <div
+                    class="main-roadmap__bottom-item"
+                    data-watch-threshold="0.65"
+                    data-watch-once
+                    data-watch
+                  >
+                    <h4>July 2026</h4>
+                    <ul>
+                      <li>Phase 1: Tease</li>
+                      <li>Phase 2: Reveal</li>
+                      <li>Phase 3: Convert</li>
+                    </ul>
+                  </div>
+                  <div
+                    class="main-roadmap__bottom-item"
+                    data-watch-threshold="0.65"
+                    data-watch-once
+                    data-watch
+                  >
+                    <h4>August 2026</h4>
+                    <ul>
+                      <li>Coordinate raids, repost groups, and influencer pushes.</li>
+                      <li>
+                        Run airdrops + engagement rewards.
+                      </li>
+                      <li>Cross-community collabs</li>
+                    </ul>
+                  </div>
+                  <div
+                    class="main-roadmap__bottom-item"
+                    data-watch-threshold="0.65"
+                    data-watch-once
+                    data-watch
+                  >
+                    <h4>September 2026</h4>
+                    <ul>
+                      <li>Introduce new layers</li>
+                      <li>Reward long-term holders/community leaders.</li>
+                      <li>Maintain content + engagement cycles.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="hero__line line line--white">
+          <div class="line__row">
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+          </div>
+          <div class="line__row">
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+          </div>
+        </div>
+        <section class="page__live live">
+          <div class="live__container">
+            <div class="live__body">
+              <div class="live__left">
+                <h2 class="live__left-back">
+                  WE <br />
+                  ‘RE
+                </h2>
+                <h2 class="live__left-front">LIVE</h2>
+              </div>
+              <div class="live__right">
+                <img loading="lazy" src="img/liveImage.png" alt="Image" />
+                <img loading="lazy" src="img/liveImage2.png" alt="Image" />
+              </div>
+            </div>
+            <div class="live__bottom">
+              <div class="live__bottom-left">
+                <span
+                  >Become aN <br />
+                  $AZKi Holder!</span
+                >
+                <span
+                  >Party & Profit <br />
+                  altogether</span
+                >
+              </div>
+              <a
+                target="_blank"
+                href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA"
+                class="live__bottom-button"
+                >buy $AZKi</a
+              >
+            </div>
+          </div>
+        </section>
+        <div class="hero__line line">
+          <div class="line__row">
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+          </div>
+          <div class="line__row">
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+            <span>AZKi</span>
+
+          </div>
+        </div>
+        <section class="page__join join">
+          <div class="join__main">
+            <div class="join__container">
+              <div
+                class="join__body"
+                data-watch-threshold="0.85"
+                data-watch-once
+                data-watch
+              >
+                <a
+                  href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA"
+                  target="_blank"
+                  class="join__button"
+                >
+                  <img src="img/joinBuy.png" alt="Buy Now" />
+                </a>
+                <a
+                  href="https://x.com/AZKi_sol"
+                  target="_blank"
+                  class="join__x"
+                >
+                  <img src="img/joinX.png" alt="Buy Now" />
+                </a>
+                <a
+                  href="https://t.me/AZKi_sol"
+                  target="_blank"
+                  class="join__tel"
+                >
+                  <img src="img/joinTel.png" alt="Buy Now" />
+                </a>
+                <img loading="lazy" src="img/join.png" alt="Image" />
+              </div>
+              <div class="join__bottom">
+                <div class="join__menu">
+                  <h4 class="join__menu-title">[NAV]</h4>
+                  <div class="join__menu-list">
+                    <a href="#" data-goto=".hero" class="join__menu-item"
+                      >HOME</a
+                    >
+                    <a href="#" data-goto=".join" class="join__menu-item"
+                      >PLATFORMS</a
+                    >
+                    <a
+                      href="#"
+                      data-goto=".main-roadmap"
+                      class="join__menu-item"
+                      >Roadmap</a
+                    >
+                  </div>
+                </div>
+                <div class="join__social">
+                  <h4 class="join__social-title">[SOCIALS]</h4>
+                  <div class="join__social-list">
+                    <a
+                      href="https://x.com/AZKi_sol"
+                      target="_blank"
+                      class="join__social-item"
+                    >
+                      <img src="img/soc1.svg" alt="Logo" />
+                    </a>
+                    <a
+                      href="https://t.me/AZKi_sol"
+                      target="_blank"
+                      class="join__social-item"
+                    >
+                      <img src="img/soc2.svg" alt="Logo" />
+                    </a>
+                    <a href="#" target="_blank" class="join__social-item">
+                      <img src="img/soc3.svg" alt="Logo" />
+                    </a>
+                    <a href="#" target="_blank" class="join__social-item">
+                      <img src="img/soc4.svg" alt="Logo" />
+                    </a>
+                  </div>
+                </div>
+                <div class="join__logo-box">
+                  <h4 class="join__logo-box-title">[R]</h4>
+                  <a href="#" data-goto=".hero" class="join__logo-box-logo">
+                    <img src="img/logoFooter.png" alt="Logo" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="join__copy">
+            <div class="join__container">
+              <div class="join__copy-body">
+                <span>2026 © ALL RIGHTS RESERVED</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer__container"></div>
+      </footer>
+    </div>
+    <script src="js/app.min.js?_v=20240929215658"></script>
+    <script src="js/demo.js"></script>
+  </body>
+</html>
